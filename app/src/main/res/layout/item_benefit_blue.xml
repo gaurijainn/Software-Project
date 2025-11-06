@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="#F1F5F9"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical"
+    android:clipToOutline="true"
+    android:backgroundTint="#EFF6FF"
+    android:backgroundTintMode="src_in"
+    android:layout_marginHorizontal="4dp"
+    android:radius="12dp">
+
+    <ImageView
+        android:src="@drawable/ic_check_circle"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:tint="#3B82F6" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Free Accommodation"
+            android:textStyle="bold"
+            android:textColor="#0F172A"
+            android:textSize="14sp"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+
+        <TextView
+            android:text="Stay on campus during finals"
+            android:textSize="13sp"
+            android:textColor="#64748B"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

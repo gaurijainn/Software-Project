@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="#ECFDF5"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical"
+    android:clipToOutline="true"
+    android:layout_marginHorizontal="4dp"
+    android:backgroundTintMode="src_in"
+    android:backgroundTint="#ECFDF5">
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_check_circle"
+        app:tint="#10B981" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Local Tours"
+            android:textStyle="bold"
+            android:textColor="#064E3B"
+            android:textSize="14sp"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+
+        <TextView
+            android:text="Explore nearby attractions"
+            android:textSize="13sp"
+            android:textColor="#059669"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

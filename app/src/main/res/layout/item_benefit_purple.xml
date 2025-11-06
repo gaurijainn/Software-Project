@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="#F5F3FF"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical"
+    android:clipToOutline="true"
+    android:layout_marginHorizontal="4dp"
+    android:backgroundTintMode="src_in"
+    android:backgroundTint="#F5F3FF">
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_check_circle"
+        app:tint="#8B5CF6" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Academic Interaction"
+            android:textStyle="bold"
+            android:textColor="#4C1D95"
+            android:textSize="14sp"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+
+        <TextView
+            android:text="Learn from top professors"
+            android:textSize="13sp"
+            android:textColor="#7C3AED"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
