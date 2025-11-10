@@ -38,7 +38,7 @@
 
         <TextView
             android:id="@+id/desc"
-            android:text="Develop cutting-edge AI/ML solutions for real-world problems"
+            android:text="Develop cutting-edge AI/ML solutions for real world problems"
             android:textSize="13sp"
             android:textColor="#666666"
             android:layout_width="match_parent"

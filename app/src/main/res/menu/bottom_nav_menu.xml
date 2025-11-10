@@ -10,7 +10,7 @@
         android:title="Timeline" />
     <item
         android:id="@+id/nav_prizes"
-        android:icon="@drawable/ic_trophy"
+        android:icon="@drawable/ic_trophy1"
         android:title="Prizes" />
     <item
         android:id="@+id/nav_register"
