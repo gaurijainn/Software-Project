@@ -12,13 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SoftwareProject">
         <activity
-            android:name=".register_page"
+            android:name=".PdfViewerActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ActivityTimeline"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ActivityTimeline"
+            android:exported="true" />
+        <activity
+            android:name=".PrizesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterPage"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

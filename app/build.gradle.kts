@@ -5,9 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.softwareproject"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
     buildFeatures {
         viewBinding = true
     }
@@ -49,4 +47,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.pdfviewer)
 }

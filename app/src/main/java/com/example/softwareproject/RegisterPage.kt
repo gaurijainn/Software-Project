@@ -5,13 +5,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class PrizesActivity : AppCompatActivity() {
+class RegisterPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_prizes)
+        setContentView(R.layout.activity_register_page)
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNav.selectedItemId = R.id.nav_prizes
+        bottomNav.selectedItemId = R.id.nav_register
 
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -25,12 +25,12 @@ class PrizesActivity : AppCompatActivity() {
                     overridePendingTransition(0, 0)
                     true
                 }
-                R.id.nav_prizes -> true
-                R.id.nav_register -> {
-                    startActivity(Intent(this, RegisterPage::class.java))
+                R.id.nav_prizes -> {
+                    startActivity(Intent(this, PrizesActivity::class.java))
                     overridePendingTransition(0, 0)
                     true
                 }
+                R.id.nav_register -> true
                 else -> false
             }
         }

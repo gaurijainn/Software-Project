@@ -5,39 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F9FAFB"
-    tools:context=".PrizesActivity">
+    android:background="#F9FAFB">
 
-    <!-- Top App Bar -->
-    <LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/Widget.Material3.Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:background="@drawable/bg_gradient_blue">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/toolbar_gradient"
+        app:itemIconTint="@android:color/white"
+        app:menu="@menu/top_app_bar_menu"
+        android:elevation="4dp">
 
-        <TextView
-            android:layout_marginTop="18dp"
-            android:text="Hackathon 2026"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            android:textStyle="bold"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-        <TextView
-            android:text="NIT Silchar"
-            android:textColor="#DDE1FF"
-            android:textSize="14sp"
-            android:layout_marginTop="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_hackathon_logo"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Hackathon Logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hackathon 2026"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NIT Silchar"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <!-- Scrollable Content -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
             android:orientation="vertical"
@@ -377,10 +400,15 @@
                     android:src="@drawable/hack1" />
 
 
-
-
-
         </LinearLayout>
     </ScrollView>
-
+    <!-- BOTTOM NAVIGATION -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/nav_icon_tint"
+        app:itemTextColor="@color/nav_icon_tint" />
 </LinearLayout>
