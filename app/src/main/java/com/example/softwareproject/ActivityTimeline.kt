@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
+import kotlin.toString
 
 class ActivityTimeline : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,9 +18,16 @@ class ActivityTimeline : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val btnSubmitSolution = findViewById<MaterialButton>(R.id.btn_attempt_test)
-        btnSubmitSolution.setOnClickListener {
+        // Attempt Screening Test
+        val btnAttemptTest = findViewById<MaterialButton>(R.id.btn_attempt_test)
+        btnAttemptTest.setOnClickListener {
             startActivity(Intent(this, ScreeningTestActivity::class.java))
+        }
+
+        // Submit Solution (Passcode + PDF Upload)
+        val btnSubmitSolution = findViewById<MaterialButton>(R.id.btn_submit_solution)
+        btnSubmitSolution.setOnClickListener {
+            showPasscodeDialog()
         }
 
         val btnViewLocation = findViewById<MaterialButton>(R.id.btn_view_location)
@@ -55,4 +63,65 @@ class ActivityTimeline : AppCompatActivity() {
             }
         }
     }
+
+    private fun showPasscodeDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_passcode, null)
+        val etPasscode = dialogView.findViewById<android.widget.EditText>(R.id.et_passcode)
+
+        val dialog = androidx.appcompat.app.AlertDialog.Builder(this)
+            .setView(dialogView)
+            .setCancelable(false)
+            .setPositiveButton("Submit") { dlg, _ ->
+
+                val passcode = etPasscode.text.toString().trim()
+
+                if (passcode == "XO2026") {
+                    dlg.dismiss()
+                    pickFileForUpload()
+                } else {
+                    etPasscode.error = "Incorrect Passcode"
+                }
+            }
+            .setNegativeButton("Cancel") { dlg, _ ->
+                dlg.dismiss()
+            }
+            .create()
+
+        dialog.show()
+    }
+
+    private fun pickFileForUpload() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "application/pdf"
+        intent.putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("application/pdf"))
+        startActivityForResult(Intent.createChooser(intent, "Select PDF"), 200)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 200 && resultCode == RESULT_OK) {
+            val fileUri = data?.data
+
+            if (fileUri != null) {
+                // TODO: Upload to server if needed
+                showSuccessMessage()
+            }
+        }
+    }
+
+    private fun showSuccessMessage() {
+        androidx.appcompat.app.AlertDialog.Builder(this)
+            .setTitle("Submission Successful")
+            .setMessage("Your PPT has been submitted successfully.\n\nPlease wait for results, which will be sent to your Team Leader’s email.")
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
+
 }
+
+
+
