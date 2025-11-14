@@ -17,6 +17,19 @@ class ActivityTimeline : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val btnSubmitSolution = findViewById<MaterialButton>(R.id.btn_attempt_test)
+        btnSubmitSolution.setOnClickListener {
+            startActivity(Intent(this, ScreeningTestActivity::class.java))
+        }
+
+        val btnViewLocation = findViewById<MaterialButton>(R.id.btn_view_location)
+
+        btnViewLocation.setOnClickListener {
+            val url = "https://www.google.com/maps/place/National+Institute+of+Technology,+Silchar/@24.758427,92.794378,16z/"
+            val intent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse(url))
+            startActivity(intent)
+        }
+
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNav.selectedItemId = R.id.nav_timeline
 

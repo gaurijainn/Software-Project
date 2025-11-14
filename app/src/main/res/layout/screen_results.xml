@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/resultsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:text="Test Completed!"
+        android:textSize="20sp"
+        android:textStyle="bold"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+
+    <TextView
+        android:text="Here are your results"
+        android:textColor="#666"
+        android:layout_marginTop="6dp" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/rounded_white"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal">
+
+        <View
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@drawable/circle_score_bg"
+            android:layout_marginTop="-48dp"
+            android:translationY="-48dp"/>
+
+        <TextView
+            android:id="@+id/scoreBig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You scored X out of Y points"
+            android:layout_marginTop="6dp"
+            android:textColor="#444"/>
+
+        <ProgressBar
+            android:id="@+id/scoreProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="10dp"
+            android:max="100"
+            android:progress="0"/>
+
+    </LinearLayout>
+
+    <!-- Breakdown -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:text="MCQ Questions"
+                android:textColor="#444"/>
+
+            <TextView
+                android:id="@+id/mcqBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/3"
+                android:padding="6dp"
+                android:background="@drawable/badge_outline"
+                android:textColor="#111"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:text="Coding Problem"
+                android:textColor="#444"/>
+
+            <TextView
+                android:id="@+id/codingBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not Submitted"
+                android:padding="6dp"
+                android:background="@drawable/badge_outline"
+                android:textColor="#111"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Total Time Taken"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/timeTaken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="12dp" />
+
+    <TextView
+        android:id="@+id/acceptanceMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#2E7D32"
+        android:gravity="center"
+        android:padding="12dp"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/closeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close"/>
+</LinearLayout>

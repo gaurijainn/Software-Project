@@ -344,7 +344,8 @@
                     </LinearLayout>
 
                     <com.google.android.material.button.MaterialButton
-                        android:text="View Final Round Details"
+                        android:id="@+id/btn_view_location"
+                        android:text="View location"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:cornerRadius="12dp"
