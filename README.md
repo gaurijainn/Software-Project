@@ -1,7 +1,7 @@
 # 📱 Hackathon 2026 – Android Application  
-### A Mobile Event Management App for NIT Silchar's Hackathons
+### A Mobile Event Management App for NIT Silchar's Hackathons.
 
-The **Hackathon 2026 Android App** is a mobile-based event management system developed using **Android Studio** and **Kotlin**. It serves as a centralized platform for participants of the National AI/ML Hackathon organized by **NIT Silchar**, providing real-time access to event details, schedules, guidelines, prizes, and round-wise updates.
+The **Hackathon 2026 Android App** is a mobile-based event management system developed using **Android Studio**, **Kotlin** and **XML**. It serves as a centralized platform for participants of the National AI/ML Hackathon organized by **NIT Silchar**, providing real-time access to event details, schedules, guidelines, prizes, and round-wise updates.
 
 ---
 
